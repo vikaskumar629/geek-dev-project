@@ -1,0 +1,1626 @@
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="shortcut icon" href="https://www.orbitmedia.com/wp-content/themes/orbit-media/favicon.ico" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="all" href="https://www.orbitmedia.com/wp-content/themes/orbit-media/style.css" />
+<noscript>
+    <link rel="stylesheet" type="text/css" media="all" href="https://www.orbitmedia.com/wp-content/themes/orbit-media/css/nojs.css" />
+</noscript>
+<link rel="pingback" href="https://www.orbitmedia.com/xmlrpc.php" />
+<title>Website Navigation: 7 Best Practices, Design Tips and Warnings | Orbit Media Studios</title>
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The structure and labels of your website navigation can have a huge impact on results. Here’s why:"/>
+<link rel="canonical" href="https://www.orbitmedia.com/blog/website-navigation/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Website Navigation: 7 Best Practices, Design Tips and Warnings | Orbit Media Studios" />
+<meta property="og:description" content="The structure and labels of your website navigation can have a huge impact on results. Here’s why:" />
+<meta property="og:url" content="https://www.orbitmedia.com/blog/website-navigation/" />
+<meta property="og:site_name" content="Orbit Media Studios" />
+<meta property="article:publisher" content="https://www.facebook.com/orbitmediastudios/" />
+<meta property="article:section" content="Digital Strategy" />
+<meta property="article:published_time" content="2016-09-14T18:20:16+00:00" />
+<meta property="article:modified_time" content="2018-11-01T19:30:32+00:00" />
+<meta property="og:updated_time" content="2018-11-01T19:30:32+00:00" />
+<meta property="og:image" content="https://www.orbitmedia.com/wp-content/uploads/2016/09/Website-Navigation-Best-Practices-Feature.jpg" />
+<meta property="og:image:secure_url" content="https://www.orbitmedia.com/wp-content/uploads/2016/09/Website-Navigation-Best-Practices-Feature.jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="300" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The structure and labels of your website navigation can have a huge impact on results. Here’s why:" />
+<meta name="twitter:title" content="Website Navigation: 7 Best Practices, Design Tips and Warnings | Orbit Media Studios" />
+<meta name="twitter:site" content="@orbiteers" />
+<meta name="twitter:image" content="https://www.orbitmedia.com/wp-content/uploads/2016/09/Website-Navigation-Best-Practices-Feature.jpg" />
+<meta name="twitter:creator" content="@orbiteers" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.orbitmedia.com\/","sameAs":["https:\/\/www.facebook.com\/orbitmediastudios\/","https:\/\/www.instagram.com\/orbiteers\/","https:\/\/www.linkedin.com\/company\/orbit-media-studios-inc.","https:\/\/www.youtube.com\/channel\/UCqwiGuydzt3Dff1YpU5JkgA","https:\/\/twitter.com\/orbiteers"],"@id":"https:\/\/www.orbitmedia.com\/#organization","name":"Orbit Media Studios","logo":"https:\/\/www.orbitmedia.com\/wp-content\/uploads\/2016\/09\/orbit-logo.png"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//assets.juicer.io' />
+<link rel='dns-prefetch' href='//www.orbitmedia.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//cdn.rawgit.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Orbit Media Studios &raquo; Feed" href="https://www.orbitmedia.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Orbit Media Studios &raquo; Comments Feed" href="https://www.orbitmedia.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Orbit Media Studios &raquo; Website Navigation: 7 Best Practices, Design Tips and Warnings Comments Feed" href="https://www.orbitmedia.com/blog/website-navigation/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.orbitmedia.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='juicerstyle-css'  href='//assets.juicer.io/embed.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='ctt-css'  href='https://www.orbitmedia.com/wp-content/plugins/click-to-tweet/css/ctt-module-design.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='magic-liquidizer-table-style-css'  href='https://www.orbitmedia.com/wp-content/plugins/magic-liquidizer-responsive-table/idcss/ml-responsive-table.css?ver=2.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://www.orbitmedia.com/wp-includes/css/dashicons.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-schema-pro-fontend-style-css'  href='https://www.orbitmedia.com/wp-content/plugins/wp-schema-pro/admin/assets/css/frontend.css?ver=1.1.10' type='text/css' media='all' />
+<link rel='stylesheet' id='spu-public-css-css'  href='https://www.orbitmedia.com/wp-content/plugins/popups/public/assets/css/public.css?ver=1.9.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='layout-css'  href='https://www.orbitmedia.com/wp-content/themes/orbit-media/css/layout.css?ver=1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='supportcss-css'  href='https://www.orbitmedia.com/wp-content/themes/orbit-media/css/support.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://www.orbitmedia.com/wp-content/plugins/jetpack/css/jetpack.css?ver=6.6.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='//assets.juicer.io/embed-no-jquery.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/magic-liquidizer-responsive-table/idjs/ml.responsive.table.min.js?ver=2.0.3'></script>
+<script type='text/javascript' src='//cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SnazzyDataForSnazzyMaps = [];
+SnazzyDataForSnazzyMaps={"id":71555,"name":"gray","description":"cool","url":"https:\/\/snazzymaps.com\/style\/71555\/gray","imageUrl":"https:\/\/snazzy-maps-cdn.azureedge.net\/assets\/71555-gray.png?v=20160829061348","json":"[{\"featureType\":\"administrative.province\",\"elementType\":\"all\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"landscape\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"lightness\":65},{\"visibility\":\"on\"}]},{\"featureType\":\"poi\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"lightness\":51},{\"visibility\":\"simplified\"}]},{\"featureType\":\"road.highway\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"visibility\":\"simplified\"}]},{\"featureType\":\"road.arterial\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"lightness\":30},{\"visibility\":\"on\"}]},{\"featureType\":\"road.local\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"lightness\":40},{\"visibility\":\"on\"}]},{\"featureType\":\"transit\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"visibility\":\"simplified\"}]},{\"featureType\":\"water\",\"elementType\":\"geometry\",\"stylers\":[{\"hue\":\"#ffff00\"},{\"lightness\":-25},{\"saturation\":-97}]},{\"featureType\":\"water\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"on\"},{\"lightness\":-25},{\"saturation\":-100}]}]","views":65,"favorites":0,"createdBy":{"name":"satchi","url":null},"createdOn":"2016-08-11T08:04:27.917","tags":["greyscale"],"colors":["gray"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/snazzy-maps/snazzymaps.js?ver=1.1.5'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.9'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/jquery.solarBox.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/cookiebot.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/jquery.hoverIntent.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/orbit_megaStickyMenu.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/orbit_videoEmbed.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/footer-reveal.min.js?ver=4.9.8'></script>
+<link rel='https://api.w.org/' href='https://www.orbitmedia.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.orbitmedia.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.orbitmedia.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+<link rel='shortlink' href='https://wp.me/p8d0wP-4be' />
+<link rel="alternate" type="application/json+oembed" href="https://www.orbitmedia.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.orbitmedia.com%2Fblog%2Fwebsite-navigation%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.orbitmedia.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.orbitmedia.com%2Fblog%2Fwebsite-navigation%2F&#038;format=xml" />
+<!-- Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.orbitmedia.com\/blog\/website-navigation\/"},"headline":"Website Navigation: 7 Best Practices, Design Tips and Warnings","image":{"@type":"ImageObject","url":"https:\/\/www.orbitmedia.com\/wp-content\/uploads\/2016\/09\/lens.jpg","width":1600,"height":650},"datePublished":"2016-09-14T13:20:16","dateModified":"2018-11-01T14:30:32","author":{"@type":"Person","name":"Andy Crestodina"},"publisher":{"@type":"Organization","name":"Orbit Media Studios","logo":{"@type":"ImageObject","url":"https:\/\/www.orbitmedia.com\/wp-content\/uploads\/2016\/09\/orbit-logo-60x60.png","width":60,"height":60}}}</script><!-- / Schema optimized by Schema Pro --><!-- breadcrumb Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.orbitmedia.com\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.orbitmedia.com\/blog\/website-navigation\/","name":"Website Navigation: 7 Best Practices, Design Tips and Warnings"}}]}</script><!-- / breadcrumb Schema optimized by Schema Pro -->
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	dataLayer.push({"pagePostType":"post","pagePostType2":"single-post","pageCategory":["digital-strategy","website-design"],"pagePostAuthor":"Andy Crestodina"});//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KK4SZJ');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'/>
+<link rel='dns-prefetch' href='//s0.wp.com'/>
+<link rel='dns-prefetch' href='//s1.wp.com'/>
+<link rel='dns-prefetch' href='//s2.wp.com'/>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'/>
+<link rel='dns-prefetch' href='//0.gravatar.com'/>
+<link rel='dns-prefetch' href='//1.gravatar.com'/>
+<link rel='dns-prefetch' href='//2.gravatar.com'/>
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+    WebFontConfig = {
+        google: { families: [ 'Montserrat' ] },
+        typekit: { id: 'bco4omh' }
+    };
+    (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+        s.parentNode.insertBefore(wf, s);
+        wf.async = 'true';
+        // Using the Web Font Loader asynchronously avoids blocking your page while loading the JavaScript. Be aware that if the script is used asynchronously, the rest of the page might render before the Web Font Loader is loaded and executed, which can cause a Flash of Unstyled Text (FOUT).
+    })(document);
+</script>
+<noscript>
+    <style>
+        .noJsHide,
+        section.pageblock.map,
+        .posts-header .info--update-filter,
+        .block.map {
+            display:none !important;
+        }
+        .pageblock.animate .pbProjects-item,
+        .featuredProject__wrapper,
+        .pageblock.animate .block,
+        .pageblock.animate .pbProjects-item,
+        .pageblock.animate .l-BlogListing-item,
+        .pageblock.animate .carousel,
+        .FrontPosts .PostTeaser,
+        .pageblock.animate #slideshow,
+        .posts-section .projectTeaser,
+        .FlexibleSection-block {
+            opacity: 1;
+            filter: alpha(opacity=1);
+        }
+    </style>
+</noscript>
+</head>
+<body class="post-template-default single single-post postid-16072 single-format-image wp-schema-pro-1.1.10">
+<!-- Loads Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK4SZJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Skip link for Accessibility -->
+<div id="skip"><a href="/blog/website-navigation/#content">Skip to Main Content</a></div>
+
+
+<div class="headerWrapper">
+    <header class="header" role="banner">
+        <div class="header__main">
+            <div class="container">
+                <div class="row">
+
+                    <div class="header__logo">
+                        <a href="https://www.orbitmedia.com/" rel="home">
+                            <div class="animated-logo">
+                                <div class="logo-left"><img src="https://www.orbitmedia.com/wp-content/themes/orbit-media/images/logo.png" alt="Orbit Media Studios" class="siteLogo siteLogo--default" /></div>
+                                <div class="logo-right"><img src="https://www.orbitmedia.com/wp-content/themes/orbit-media/images/logo-text.png" alt="Orbit Media Studios" class="siteLogo siteLogo--default" /></div>
+                            </div>
+                            <img
+                                src="https://www.orbitmedia.com/wp-content/themes/orbit-media/images/logo-tiny.png"
+                                alt="Orbit Media Studios" class="siteLogo siteLogo--tiny" />
+                        </a>
+                    </div>
+
+                    <!-- #site-navigation -->
+                                            <div class="header__primaryMenu">
+                            <nav class="navbar" role="navigation">
+
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#primary-navigation-menu">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <div>
+                                            <span class="bar"></span>
+                                            <span class="bar"></span>
+                                            <span class="bar"></span>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <!-- Primary Nav -->
+                                <div id="primary-navigation-menu" class="primaryMenu">
+
+                                    <ul id="menu-main-nav" class="primaryMenu__list"><li id="menu-item-8423" class="menu-item menu-item-type-post_type_archive menu-item-object-project menu-item-8423"><a title="Portfolio" href="https://www.orbitmedia.com/portfolio/"><span data-letters="Portfolio">Portfolio</span></a></li>
+<li id="menu-item-12835" class="megamenu menu-item menu-item-type-post_type_archive menu-item-object-service menu-item-has-children menu-item-12835 dropdown"><a title="Web Services" href="https://www.orbitmedia.com/services/"><span data-letters="Web Services">Web Services</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span><div class="MegaMenu-container">
+<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--0">
+	<li id="menu-item-12836" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-12836 dropdown"><a title="Strategy &#038; Analytics" href="https://www.orbitmedia.com/services/strategy-analytics/"><span data-letters="Strategy &#038; Analytics">Strategy &#038; Analytics</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+	<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--1">
+		<li id="menu-item-14539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14539"><a title="Website Audit" href="https://www.orbitmedia.com/website-audit/"><span data-letters="Website Audit">Website Audit</span></a></li>
+		<li id="menu-item-14571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14571"><a title="Keyphrase Research" href="https://www.orbitmedia.com/keyphrase-research/"><span data-letters="Keyphrase Research">Keyphrase Research</span></a></li>
+		<li id="menu-item-13084" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13084"><a title="Persona Research" href="https://www.orbitmedia.com/personas/"><span data-letters="Persona Research">Persona Research</span></a></li>
+</ul>
+</li>
+	<li id="menu-item-12837" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-12837 dropdown"><a title="Web Design &#038; UX" href="https://www.orbitmedia.com/services/web-design/"><span data-letters="Web Design &#038; UX">Web Design &#038; UX</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+	<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--1">
+		<li id="menu-item-14535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14535"><a title="Marketing Website Design" href="https://www.orbitmedia.com/marketing-websites/"><span data-letters="Marketing Website Design">Marketing Website Design</span></a></li>
+		<li id="menu-item-13101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13101"><a title="Ecommerce Web Design" href="https://www.orbitmedia.com/ecommerce-web-design/"><span data-letters="Ecommerce Web Design">Ecommerce Web Design</span></a></li>
+		<li id="menu-item-13082" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13082"><a title="Web Content Writing" href="https://www.orbitmedia.com/web-content-writing/"><span data-letters="Web Content Writing">Web Content Writing</span></a></li>
+</ul>
+</li>
+	<li id="menu-item-12838" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-12838 dropdown"><a title="Web Development" href="https://www.orbitmedia.com/services/web-development/"><span data-letters="Web Development">Web Development</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+	<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--1">
+		<li id="menu-item-14716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14716"><a title="WordPress Development" href="https://www.orbitmedia.com/wordpress-development/"><span data-letters="WordPress Development">WordPress Development</span></a></li>
+		<li id="menu-item-14719" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14719"><a title="Drupal Development" href="https://www.orbitmedia.com/drupal-development/"><span data-letters="Drupal Development">Drupal Development</span></a></li>
+		<li id="menu-item-14537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14537"><a title="Hosting &#038; Support" href="https://www.orbitmedia.com/hosting-support/"><span data-letters="Hosting &#038; Support">Hosting &#038; Support</span></a></li>
+</ul>
+</li>
+	<li id="menu-item-12839" class="menu-item menu-item-type-post_type menu-item-object-service menu-item-has-children menu-item-12839 dropdown"><a title="Analytics &#038; Optimization" href="https://www.orbitmedia.com/services/analytics-optimization/"><span data-letters="Analytics &#038; Optimization">Analytics &#038; Optimization</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+	<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--1">
+		<li id="menu-item-13081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13081"><a title="Analytics Review" href="https://www.orbitmedia.com/analytics-review/"><span data-letters="Analytics Review">Analytics Review</span></a></li>
+		<li id="menu-item-14543" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14543"><a title="Search Engine Optimization" href="https://www.orbitmedia.com/search-engine-optimization/"><span data-letters="Search Engine Optimization">Search Engine Optimization</span></a></li>
+		<li id="menu-item-14542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14542"><a title="Conversion Rate Optimization" href="https://www.orbitmedia.com/conversion-rate-optimization/"><span data-letters="Conversion Rate Optimization">Conversion Rate Optimization</span></a></li>
+</ul>
+</li>
+</ul>
+</div></li>
+<li id="menu-item-789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-789 dropdown"><a title="About" href="https://www.orbitmedia.com/about/"><span data-letters="About">About</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span><div class="MegaMenu-container">
+<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--0">
+	<li id="menu-item-7334" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7334"><a title="Team" href="https://www.orbitmedia.com/about/team-bios/"><span data-letters="Team">Team</span></a></li>
+	<li id="menu-item-8698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8698"><a title="Awards" href="https://www.orbitmedia.com/about/awards/"><span data-letters="Awards">Awards</span></a></li>
+	<li id="menu-item-8701" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8701"><a title="Culture" href="https://www.orbitmedia.com/about/culture/"><span data-letters="Culture">Culture</span></a></li>
+	<li id="menu-item-8935" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8935"><a title="Content Chemistry" href="https://www.orbitmedia.com/about/content-chemistry/"><span data-letters="Content Chemistry">Content Chemistry</span></a></li>
+	<li id="menu-item-8717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8717 dropdown"><a title="Chicago Cause 2018" href="https://www.orbitmedia.com/about/chicago-cause/"><span data-letters="Chicago Cause 2018">Chicago Cause 2018</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+	<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--1">
+		<li id="menu-item-8715" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8715"><a title="Past Winners" href="https://www.orbitmedia.com/about/chicago-cause/past-winners/"><span data-letters="Past Winners">Past Winners</span></a></li>
+</ul>
+</li>
+	<li id="menu-item-16283" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16283"><a title="B Corp" href="https://www.orbitmedia.com/about/b-corp/"><span data-letters="B Corp">B Corp</span></a></li>
+	<li id="menu-item-8700" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8700"><a title="Careers" href="https://www.orbitmedia.com/about/careers/"><span data-letters="Careers">Careers</span></a></li>
+</ul>
+</div></li>
+<li id="menu-item-790" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-790 current-menu-item"><a title="Blog" href="https://www.orbitmedia.com/blog/"><span data-letters="Blog">Blog</span></a></li>
+<li id="menu-item-7794" class="menu-item menu-item-type-post_type_archive menu-item-object-omsevents menu-item-7794"><a title="Events" href="https://www.orbitmedia.com/events/"><span data-letters="Events">Events</span></a></li>
+<li id="menu-item-791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-791 dropdown"><a title="Contact" href="https://www.orbitmedia.com/contact/"><span data-letters="Contact">Contact</span></a><span class="caret dropdown-toggle" data-toggle="dropdown"></span><div class="MegaMenu-container">
+<ul role="menu" class="dropdown-menu MegaMenu-list MegaMenu-list--0">
+	<li id="menu-item-8687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8687"><a title="Support" href="https://www.orbitmedia.com/contact/support/"><span data-letters="Support">Support</span></a></li>
+	<li id="menu-item-8686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8686"><a title="Is Orbit a Fit for you?" href="https://www.orbitmedia.com/contact/is-orbit-a-fit-for-you/"><span data-letters="Is Orbit a Fit for you?">Is Orbit a Fit for you?</span></a></li>
+</ul>
+</div></li>
+</ul>                                    <button type="button" class="navbar-toggle-close" data-toggle="collapse"
+                                            data-target="#primary-navigation-menu">Close Menu</button>
+
+                                </div>
+                            </nav>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+
+            
+    
+            <div class="back-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 text-center / back">
+                        <p>
+                            <a href="https://www.orbitmedia.com/blog/">
+                                <i class="fa fa-th"></i>&nbsp;View All Blog Posts                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.back-wrapper -->
+    
+
+    </header>
+
+    <div class="stickyPlaceholder js-stickyPlaceholder"></div>
+
+    
+    
+</div> <!-- .headerWrapper -->
+
+
+<div class="fr-background">
+
+
+
+    <span id="js-ArticleStart"></span>
+
+<!-- Blog Header -->
+
+<div class="headerImage headerImage--bkgdImage" style="background-image: url('https://www.orbitmedia.com/wp-content/uploads/2016/09/lens-1600x650.jpg');">
+        <div class="container headerImage-content">
+        <div class="row">
+            <div class="u-col-skinny">
+
+                <h1 class="headerImage-title">Website Navigation: 7 Best Practices, Design Tips and Warnings</h1>
+
+                <div class="Blog-meta">
+                    <span class="Blog-categories"><a href="https://www.orbitmedia.com/blog/category/digital-strategy/">Digital Strategy</a> <span class="Blog-metaDivider">|</span><a href="https://www.orbitmedia.com/blog/category/website-design/">Website Design &amp; Usability</a> <span class="Blog-metaDivider">|</span></span>                    <span class="Blog-commentCount">
+                        <a href="#comments">
+                            21&nbsp;Comments                        </a>
+                    </span>
+                </div>
+
+                                    <div class="AddThis AddThis--top">
+                        <span class="AddThis-title">Share This</span>
+                        
+			<div class="addthis_toolbox addthis_32x32_style" addthis:url="https://www.orbitmedia.com/blog/website-navigation/" addthis:title="Website Navigation: 7 Best Practices, Design Tips and Warnings">
+					<div class="custom_images">
+							<a class="addthis_button_facebook"><i class="fa fa-facebook facebook"></i></a>
+							<a class="addthis_button_twitter"><i class="fa fa-twitter twitter"></i></a>
+							<a class="addthis_button_linkedin"><i class="fa  fa-linkedin linkedin"></i></a>
+							<a class="addthis_button_buffer"><i class="fa icon-buffer"></i></a>
+							<a class="addthis_button_compact"><i class="fa fa-plus plus"></i></a>
+							<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+			</div>
+	
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586d59faee98661" async="async"></script>
+					<script type="text/javascript">
+							// Get or create the AddThis config object.
+							var addthis_config = addthis_config || {};
+
+							// Disable "Click Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_clickback = false;
+
+							// Disable "Address Bar Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_addressbar = false;
+
+							// Get or create the AddThis share object.
+							var addthis_share = addthis_share || {}
+
+							// Append "via orbiteers" to Tweets.
+							// @see http://support.addthis.com/customer/portal/articles/1013558-removing-all-hashtags-anchors-weird-codes-from-your-urls
+							addthis_share = {
+									passthrough : {
+											twitter: {
+													via: "orbiteers"
+											}
+									}
+							}
+					</script>
+			                    </div><!-- shareWrapper -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Detail Template -->
+<div class="template template--hasNoLeftOrRightCols">
+    <div class="container">
+        <div class="row">
+            <a name="content"></a>
+            <div class="template__content template__content--skinny">
+                <div class="row">
+
+                    <div class="l-blog-left">
+                        
+			<img alt="Andy Crestodina" title="Andy Crestodina"src="https://www.orbitmedia.com/wp-content/themes/orbit-media/images/LazyLoad.png" data-nova-media="https://www.orbitmedia.com/wp-content/uploads/2016/08/Andy-Profile-600-400x400.png" class="AuthorImage noJsHide"/><noscript><img alt="Andy Crestodina" title="Andy Crestodina"src="https://www.orbitmedia.com/wp-content/uploads/2016/08/Andy-Profile-600-400x400.png" class="AuthorImage"/></noscript>
+		<div class="Author-byline">By Andy Crestodina</div>
+                                                    <div class="AddThis AddThis--left">
+                                <span class="AddThis-title">Share</span>
+                                
+			<div class="addthis_toolbox addthis_32x32_style" addthis:url="https://www.orbitmedia.com/blog/website-navigation/" addthis:title="Website Navigation: 7 Best Practices, Design Tips and Warnings">
+					<div class="custom_images">
+							<a class="addthis_button_facebook"><i class="fa fa-facebook facebook"></i></a>
+							<a class="addthis_button_twitter"><i class="fa fa-twitter twitter"></i></a>
+							<a class="addthis_button_linkedin"><i class="fa  fa-linkedin linkedin"></i></a>
+							<a class="addthis_button_buffer"><i class="fa icon-buffer"></i></a>
+							<a class="addthis_button_compact"><i class="fa fa-plus plus"></i></a>
+							<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+			</div>
+	
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586d59faee98661" async="async"></script>
+					<script type="text/javascript">
+							// Get or create the AddThis config object.
+							var addthis_config = addthis_config || {};
+
+							// Disable "Click Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_clickback = false;
+
+							// Disable "Address Bar Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_addressbar = false;
+
+							// Get or create the AddThis share object.
+							var addthis_share = addthis_share || {}
+
+							// Append "via orbiteers" to Tweets.
+							// @see http://support.addthis.com/customer/portal/articles/1013558-removing-all-hashtags-anchors-weird-codes-from-your-urls
+							addthis_share = {
+									passthrough : {
+											twitter: {
+													via: "orbiteers"
+											}
+									}
+							}
+					</script>
+			                            </div><!-- shareWrapper -->
+                                            </div> <!-- .l-blog-left -->
+
+                    <div class="l-blog-right">
+
+                        
+                        <!-- Post Content -->
+                        <div id="post-16072" class="post detail">
+                            <p>Little things make a big difference. Your website navigation is a great example. The structure and labels of your navigation can have a huge impact on results. Here’s why:</p>
+<ul>
+<li><strong>Navigation affects traffic:</strong> how high you’ll rank, how much traffic you’ll get from search</li>
+<li><strong>Navigation affects conversions:</strong> how easy the site is to use, what percentage of visitors convert into leads and customers</li>
+</ul>
+<p>Here is a checklist for website navigation best practices. These are design ideas and tips along with examples of what to do (and what not to do) with your website’s menu.</p>
+<h2>1. Be descriptive</h2>
+<p>“What we do” doesn’t actually say what you do. Neither does “Products,” “Services” or “Solutions.” Descriptive navigation that uses keyphrases is better for two reasons. Here’s where SEO and conversions come in.</p>
+<ul>
+<li style="font-weight: 400;"><strong><i>Descriptive labels in your navigation are good for search engines</i></strong><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">The navigation bar is a key place to indicate relevance to search engines. Since your navigation appears on every page, the descriptive label shows Google that you are truly about that topic. </span></li>
+</ul>
+<ul>
+<li style="font-weight: 400;"><strong><i>Descriptive labels in your navigation are good for visitors</i></strong><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">Your navigation bar is visually prominent, so it communicates instantly. When it lists your main products or services, it will be obvious, at a glance, what your company does up front, so they’ll know they’re in the right place.</span></li>
+</ul>
+<p><span style="line-height: 1.5;">Use your main navigation as a place to start telling people and search engines about what you do. Use labels that use top-of-mind phrases for visitors and popular keyphrases according to the <a href="https://adwords.google.com/KeywordPlanner">Google Keyword Tool</a>.</span></p>
+<p><em><strong>Warning!</strong> Avoid labels such as “services” and “solutions.”</em></p>
+<p>If you have one page listing all of your services, it will never rank. That’s because it’s not focusing on one topic. Every page on your website has a chance of ranking, as long as it’s focused on a topic, on a keyphrase.</p>
+<p>No one is searching for “products” or “services,” so these labels don’t help your rankings.</p>
+<p><img class="alignnone size-full wp-image-25842" src="https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-primary-nav.jpg" alt="" width="710" height="436" srcset="https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-primary-nav.jpg 710w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-primary-nav-300x184.jpg 300w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-primary-nav-400x246.jpg 400w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-primary-nav-670x411.jpg 670w" sizes="(max-width: 710px) 100vw, 710px" /></p>
+<p>This is why your website architecture, not just the navigation, is key for SEO. A search optimized website has a page for each service, each product, each team member and topic. Avoid making a “services” page unless it links to other, search optimized pages for each service.</p>
+<p>For more info, read <a href="https://www.orbitmedia.com/blog/how-to-make-a-sitemap-keywords/">how to make a sitemap</a>.</p>
+<h2>2. Avoid format-based navigation</h2>
+<p>Navigation labels such as &#8220;videos,&#8221; &#8220;photos&#8221; and &#8220;white papers&#8221; tell visitors the format of the content, but not the topic. People don’t go to websites looking for videos or whitepapers. They visit websites looking for answers and information.</p>
+<p>Labels indicating the format aren’t descriptive and therefore, not very helpful to visitors. That’s why Aurora Bedford from the Nielsen Norman Group <a href="https://www.nngroup.com/articles/format-based-navigation/">recommends against using format-based navigation.</a></p>
+<hr />
+<table border="0">
+<tbody>
+<tr valign="top">
+<td style="min-width: 130px;"><img class="alignnone wp-image-11965 size-full" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/CircleHeader-Template.png" width="125" height="125" /></td>
+<td>
+<p dir="ltr">&#8220;<em>Users interested in a specific topic usually don’t care in what format the information will be delivered to them; they are focused solely on finding answers that will address the question they had in mind.</em><em style="font-family: inherit; font-size: inherit; line-height: 1.5;">&#8221; &#8211; Aurora Bedford, User Experience Specialist, <a href="https://www.nngroup.com/people/aurora-bedford/">Nielsen Norman Group</a></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Avoid dropdown menus</h2>
+<p>Popular, yes. But not a good idea. Avoiding dropdown menus is good for two reasons:</p>
+<ul>
+<li><em><strong>Good for search engines:</strong></em> Drop down menus can be difficult for search engines to crawl. Depending on how they’re programmed, they may lead to problems.</li>
+</ul>
+<ul>
+<li><strong><em>Good for visitors:</em> </strong>Usability studies show that <a href="http://www.useit.com/alertbox/annoyances.html">dropdown menus are annoying</a>. Here’s why: visitors move their eyes much faster than they move their mouse. When they move their mouse to a menu item, they’ve likely already decided to click&#8230; and then you gave them more options. It’s a hiccup in the mind of the visitor.</li>
+</ul>
+<p>More importantly,<em> dropdowns encourage visitors to skip important pages.</em> If you’re using dropdowns, you can easily see this problem in your analytics.</p>
+<p><img class="alignnone size-full wp-image-11970" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/ga-navigation.png" alt="website-navigation-ga" width="600" height="370" /></p>
+<p>But the research shows that one type of drop down menu <a href="http://www.useit.com/alertbox/mega-dropdown-menus.html">performs well in usability studies</a>: The “mega drop down.” These offer lots of options, making that moment of friction worth it.</p>
+<p><img class="alignnone size-full wp-image-25843" src="https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-dropdown.jpg" alt="" width="710" height="917" srcset="https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-dropdown.jpg 710w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-dropdown-232x300.jpg 232w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-dropdown-310x400.jpg 310w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-dropdown-670x865.jpg 670w" sizes="(max-width: 710px) 100vw, 710px" /></p>
+<p>If you have a big site with lots of pages and a very diverse set of products or services, a mega menu may be a good idea, despite the fact that they dramatically increase the number of links from your home page.</p>
+<h2>4. Limit the number of menu items to seven</h2>
+<p>Some websites have hundreds of links on the home page. That’s bad. Limiting the number of links in your main navigation is good for two reasons. These are the same two reasons to use descriptive labels:</p>
+<ul>
+<li style="font-weight: 400;"><strong><i>Fewer items in your navigation are good for search engines</i></strong><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">Your homepage has the most &#8220;authority&#8221; with search engines because more sites link to your homepage than to your interior pages. This authority flows down to deeper pages through your navigation. </span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">If your homepage has tons of links, this </span><i><span style="font-weight: 400;">dilutes</span></i><span style="font-weight: 400;"> the authority passed from it down to your interior pages. This reduces the likelihood that your interior pages will rank. </span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">The more concise your navigation, the more authority will flow to each interior page, making your interior pages more likely to rank. </span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">Read </span><a href="https://www.orbitmedia.com/blog/internal-linking/"><span style="font-weight: 400;">Internal Linking Best Practices</span></a><span style="font-weight: 400;"> for more details.</span></li>
+</ul>
+<p>Example: If your homepage has an authority of 38 according to Open Site Explorer, then is has just this amount of authority to pass along to interior pages.</p>
+<p><img class="alignnone size-full wp-image-11971" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/website-navigation-ose.png" alt="website-navigation-ose" width="600" height="222" /></p>
+<p>Suppose your navigation includes 50 items and combined with every other link and button on the page, your home page links to a total of 200 pages. This means the amount of authority passed from the homepage to each of those pages is divided by 200.</p>
+<p>If you cut the number of links in half, you’ll double the amount of authority passed from the home page, and increase the chance that your interior pages will rank.</p>
+<p><img class="alignnone size-full wp-image-11972" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/website-navigation-pagerank.png" alt="website-navigation-pagerank" width="600" height="185" /></p>
+<p><em><strong>Tip!</strong> The “<a href="http://www.ecreativeim.com/pagerank-link-juice-calculator.php">Link Juice Calculator</a>” counts the number of links on any page. It also estimates the increase in authority that would be passed if you reduce the number of links. It uses PageRank, not Domain Authority, but the concept is the same.</em></p>
+<ul>
+<li style="font-weight: 400;"><i><span style="font-weight: 400;">Fewer items in your navigation are good for visitors</span></i><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">Short-term memory holds only seven items, plus or minus two. This is from </span><a href="http://psychclassics.yorku.ca/Miller/"><span style="font-weight: 400;">the famous psychology paper</span></a><span style="font-weight: 400;"> published by George Miller in 1956.</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">More recent research shows that although the brain uses “chunking” as a method to improve recall in short-term memory, the number depends on the category. It may be seven for numbers, but only five for words. </span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">Regardless, the more items in your navigation, the more difficult the information is to remember and process for your visitors. Visually, eight is a LOT more than seven. If you have too many, visitors’ eyes may scan past important items.</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;"><br />
+</span><span style="font-weight: 400;">If you need to use more than seven items, consider breaking them up into groups.</span></li>
+</ul>
+<p><em><strong>Warning!</strong> Avoid long lists.</em></p>
+<p>Break out your navigation into groups of five to seven items.</p>
+<p><em><strong>Tip!</strong> Each time you remove a menu item (or any other element) from a page, everything left becomes more visually prominent and is more likely to be seen and considered.</em></p>
+<p><img class="alignnone size-full wp-image-25841" src="https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-side-nav.jpg" alt="" width="710" height="1080" srcset="https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-side-nav.jpg 710w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-side-nav-197x300.jpg 197w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-side-nav-673x1024.jpg 673w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-side-nav-263x400.jpg 263w, https://www.orbitmedia.com/wp-content/uploads/2016/09/website-navigation-side-nav-670x1019.jpg 670w" sizes="(max-width: 710px) 100vw, 710px" /></p>
+<p>It takes discipline to make the tough decisions. You can do it. Challenge yourself to trim it down to five!</p>
+<h2>5. The order of your website navigation is important</h2>
+<p>The number of items matters, but so does the order of those items.</p>
+<p>In website navigation, just like any list, items at the beginning and the end are most effective, because this is where attention and retention are highest. It’s called the <a href="https://en.wikipedia.org/wiki/Serial_position_effect">serial position effect</a>, and it combines to cognitive biases:</p>
+<ul>
+<li><strong>Primacy effect:</strong> Items at the beginning of a list are more easily remembered.</li>
+</ul>
+<ul>
+<li><strong>Recency effect:</strong> Items at the end of a list (or things that just happened) are more easily remembered.</li>
+</ul>
+<p>For this reason, anything we put at the beginning or end of our navigation becomes more prominent. We should put those items that are most important to our business and our visitors in these places.</p>
+<p>Always seek to put the things that are most important to visitors in the most visually prominent places. This aligns with the core principal of web design and content marketing:</p>
+<blockquote><p>First give visitors what they want, then they might give you what you want.</p></blockquote>
+<p>So put the most popular, important items at the beginning of the navigation. Not sure what those are? Just look at your Analytics. Speaking of Analytics, let’s move on to our final tip.</p>
+<h2>6. How to optimize your website’s navigation</h2>
+<p>Designing your navigation is the beginning, not the end. Digital ink is never dry. A few weeks after creating your navigation, you can use Analytics to look back and do a bit of evaluation.</p>
+<p>There are two reports that will show you which navigation items are most used by your visitors. One is the “navigation summary” or “in-page” view in the Behavior report. The others are the Behavior Flow / User Flow reports.</p>
+<p>In-page Analytics shows little orange boxes next to each of your navigation items, indicating what percentage of visitors went to each page from any page. It’s <a href="https://www.orbitmedia.com/blog/inaccurate-google-analytics-traffic-sources/">inaccurate and misleading</a> for several reasons. It’s also a little buggy.</p>
+<p>If this report doesn&#8217;t work for you, you can review the “navigation summary” from your home page. The list of pages and percentage pageviews for each will give you a good sense of what’s working in your menu.</p>
+<p><img class="alignnone size-full wp-image-11977" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/website-navigation-navsummary.png" alt="website-navigation-navsummary" width="600" height="271" /></p>
+<p>Another view into what people are clicking is in your <em>Behavior &gt; Behavior Flow </em>report. This report is identical to the <em>Audience &gt; Users Flow</em> report. These reports are identical unless you are tracking events. Event tracking is added to the Behavior Flow report data.</p>
+<p>In either case, the report will look something like this:</p>
+<p><img class="alignnone size-full wp-image-11978" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/website-navigation-behavior-flow.png" alt="website-navigation-behavior-flow" width="600" height="254" /></p>
+<p>Tip! For more insights into how to use the User Flow report, read <a href="https://www.orbitmedia.com/blog/user-flow-google-analytics/">top paths through your website</a>.</p>
+<p>These reports are all ways to get ideas about which navigation items visitors are using and which ones they’re not, making optimization possible.</p>
+<p>Here are some examples of decisions you might make based on your analysis from these reports.</p>
+<ul>
+<li><strong>Remove</strong> items that rarely get clicked, if they aren’t critical</li>
+</ul>
+<ul>
+<li><strong>Rename</strong> or relabel that rarely get clicked, if they are important</li>
+</ul>
+<ul>
+<li><strong>Move</strong> items that often get clicked to the beginning</li>
+</ul>
+<p><em><strong>Warning!</strong> Keep in mind that your home page may not be the entry point for many visitors. A search optimized website has many entry points. Many (or even most) visitors won’t start from the home page.</em></p>
+<h2>7. Website navigation on mobile devices</h2>
+<p>The mega-trend of <a href="https://www.orbitmedia.com/responsive-web-design">responsive web design</a> has brought with it mobile navigation best practices and standards. It can be summed up in two words: “hamburger icon.”</p>
+<p>It’s an icon made up of three short horizontal lines, representing a menu. But it looks a bit like a sandwich, so people call it the hamburger icon. It appears in the top right of mobile websites and clicking it reveals the navigation menu.</p>
+<p>Here are a few examples of mobile navigation examples.</p>
+<p><img class="alignnone size-full wp-image-11994" src="https://www.orbitmedia.com/wp-content/uploads/2016/12/Website-Navigation-Best-Practices-Nav-Icons.jpg" alt="Website-Navigation-Best-Practices-Nav-Icons" width="600" height="394" /></p>
+<p>Although this has become a dominant standard, adding the word “menu” may help visitors find this type of “hidden” navigation. The Nielsen Norman Group warns that <a href="https://www.nngroup.com/articles/hamburger-menus/">hidden navigation increases task completion time for visitors.</a></p>
+<p><em><strong>ProTip!</strong> For mobile visitors, make sure that the phone number turns into a button that dials the number when tapped. It’s a simple matter of adding tel: to the href code for the phone number for the mobile version of your site. The code should look something like this:</em></p>
+<p>&lt;a href=&#8221;tel:773-348-4581&#8243;&gt;(773)348.4581&lt;/a&gt;</p>
+<blockquote><p>A good website makes your phone ring.</p></blockquote>
+<p>For more ideas on mobile navigation and buttons, read <a href="https://www.orbitmedia.com/blog/how-to-design-button/">how to design a button</a>.</p>
+<h2>Charting (and changing) your course</h2>
+<p>We hope these tips gave you new ideas and inspiration for your menus. Ideally, you can implement your ideas quickly in your content management system. A good site is flexible, letting you adjust the labels and order of your menus.</p>
+<p>There are exceptions to every rule. Not sure if you should make a change? Ask an expert web strategist to review your Analytics with you.</p>
+<p>Make your navigation work well for both human visitors and search engine robots. Your Analytics will thank you for it!</p>
+<p>Any other ideas or questions? What about the “home” button? Is it necessary? Do you put your phone number in your header? Add your comment below.</p>
+                        </div>
+
+                        <span id="js-ArticleEnd"></span>
+
+                                                    <div class="AddThis AddThis--bottom">
+                                <span class="AddThis-title">Share This</span>
+                                
+			<div class="addthis_toolbox addthis_32x32_style" addthis:url="https://www.orbitmedia.com/blog/website-navigation/" addthis:title="Website Navigation: 7 Best Practices, Design Tips and Warnings">
+					<div class="custom_images">
+							<a class="addthis_button_facebook"><i class="fa fa-facebook facebook"></i></a>
+							<a class="addthis_button_twitter"><i class="fa fa-twitter twitter"></i></a>
+							<a class="addthis_button_linkedin"><i class="fa  fa-linkedin linkedin"></i></a>
+							<a class="addthis_button_buffer"><i class="fa icon-buffer"></i></a>
+							<a class="addthis_button_compact"><i class="fa fa-plus plus"></i></a>
+							<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+			</div>
+	
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586d59faee98661" async="async"></script>
+					<script type="text/javascript">
+							// Get or create the AddThis config object.
+							var addthis_config = addthis_config || {};
+
+							// Disable "Click Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_clickback = false;
+
+							// Disable "Address Bar Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_addressbar = false;
+
+							// Get or create the AddThis share object.
+							var addthis_share = addthis_share || {}
+
+							// Append "via orbiteers" to Tweets.
+							// @see http://support.addthis.com/customer/portal/articles/1013558-removing-all-hashtags-anchors-weird-codes-from-your-urls
+							addthis_share = {
+									passthrough : {
+											twitter: {
+													via: "orbiteers"
+											}
+									}
+							}
+					</script>
+			                            </div><!-- shareWrapper -->
+                        
+                        <!-- Author Markup -->
+                        <div class="Author-wrapper">
+                            <article class="Author">
+                                <div class="Author-image">
+                                    
+			<img alt="Andy Crestodina" title="Andy Crestodina"src="https://www.orbitmedia.com/wp-content/themes/orbit-media/images/LazyLoad.png" data-nova-media="https://www.orbitmedia.com/wp-content/uploads/2016/08/Andy-Profile-600-400x400.png" class="AuthorImage noJsHide"/><noscript><img alt="Andy Crestodina" title="Andy Crestodina"src="https://www.orbitmedia.com/wp-content/uploads/2016/08/Andy-Profile-600-400x400.png" class="AuthorImage"/></noscript>
+		                                </div>
+                                <div class="Author-bio">
+                                    <h3 class="Author-title">Andy Crestodina</h3>
+                                    <div class="introText">Co-Founder / Chief Marketing Officer of Orbit Media</div>
+<a href="https://www.orbitmedia.com/andy-crestodina">Andy Crestodina</a> is the co-founder and CMO of Orbit Media. He's an international top-rated keynote speaker and the author of <a href="https://www.orbitmedia.com/content-chemistry">Content Chemistry: The Illustrated Guide to Content Marketing</a>. You can find Andy on <a href="https://www.linkedin.com/in/andycrestodina">LinkedIn</a> and <a title="Andy Crestodina on Twitter" href="http://www.twitter.com/crestodina" target="_blank" rel="noopener">Twitter</a>.                                </div>
+                            </article>
+                        </div>
+
+                                                    
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">What are your thoughts?					<small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/website-navigation/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="https://jetpack.wordpress.com/jetpack-comment/?blogid=121310987&#038;postid=16072&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;greeting=What+are+your+thoughts%3F&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=dark&#038;lang=en_US&#038;jetpack_version=6.6.1&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;sig=bc99942868f1987b8f19328e73fa43545e13a476#parent=https%3A%2F%2Fwww.orbitmedia.com%2Fblog%2Fwebsite-navigation%2F" style="width:100%; height: 430px; border:0;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups"></iframe>
+									<!--[if !IE]><!-->
+					<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value="" />
+
+		
+<div class="privacy-policy-gdpr"><p>By signing up you are agreeing to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+</div>
+
+<div id="comments" class="Comments">
+
+    <div class="Comments-title">
+        Comments (21)    </div>
+
+            <ul class="comment-list">
+            		<li class="comment even thread-even depth-1" id="comment-10799">
+				<div id="div-comment-10799" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://graph.facebook.com/v2.2/1562108425/picture?type=large&#038;_md5=310e864832814824f4d91f48c87fd955' srcset='https://secure.gravatar.com/avatar/570944bf9fbb6479042173f803e84f9b?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Ryan Johnson</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        9/15/16                    </span>
+                                    </div>
+                
+                <p>Great piece, Andy! I&#8217;ve been working in SEO for years and I still learn something new from each of your articles. Thanks for the intro to the Link Juice Test.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10799' onclick='return addComment.moveForm( "div-comment-10799", "10799", "respond", "16072" )' aria-label='Reply to Ryan Johnson'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10800">
+				<div id="div-comment-10800" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://i2.wp.com/pbs.twimg.com/profile_images/624267110831665152/2EzMiay-_normal.jpg?resize=70%2C70' srcset='https://secure.gravatar.com/avatar/b0b0ef6618addbc23c00517428dd46e6?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Alex Gramm (@gramm_football)</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        9/16/16                    </span>
+                                    </div>
+                
+                <p>I think it always will be between the minimalism, the user needs, a false UX and our  appetency to show more.<br />
+Thank you very much. I have 10+ years of the marketing experience but your articles is very useful for me,</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10800' onclick='return addComment.moveForm( "div-comment-10800", "10800", "respond", "16072" )' aria-label='Reply to Alex Gramm (@gramm_football)'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-10801">
+				<div id="div-comment-10801" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/87f96f5977a641f02f0a8859a5a95e11?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/87f96f5977a641f02f0a8859a5a95e11?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Alison</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        9/22/16                    </span>
+                                    </div>
+                
+                <p>Hi Andy! </p>
+<p>I have a question about two different options for navigation, and I&#8217;ll use a &#8216;Services&#8217; link as an example &#8211; </p>
+<p>1. Services is listed on the navigation menu and when it&#8217;s clicked a dropdown menu appears with a list of 8 services. Each service brings you to it&#8217;s own page. </p>
+<p>2. Services is listed on the navigation menu and it leads directly to a page called Services which then includes 8 links to 8 separate pages about those services. </p>
+<p>Is one of these options better for SEO? I like option 2 better, but I was told that the more information is in the navigation bar, the better. </p>
+<p>Thanks!</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10801' onclick='return addComment.moveForm( "div-comment-10801", "10801", "respond", "16072" )' aria-label='Reply to Alison'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		<ul class="children">
+		<li class="comment odd alt depth-2" id="comment-11120">
+				<div id="div-comment-11120" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://i1.wp.com/pbs.twimg.com/profile_images/727984545694355456/nZTnXz-V_normal.jpg?resize=70%2C70' srcset='https://secure.gravatar.com/avatar/be80079de16c75114193f3c7d90df5a3?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Andy Crestodina (@crestodina)</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        1/12/17                    </span>
+                                    </div>
+                
+                <p>I would generally prefer option two, since it&#8217;s a better way to guide visitors through the site. But if you have a lot of options (10+) the &#8220;mega dropdown&#8221; might be a good choice.</p>
+<p>And I would look for any label other than &#8220;services.&#8221; Try to be descriptive! It&#8217;s better SEO and better UX&#8230;</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11120' onclick='return addComment.moveForm( "div-comment-11120", "11120", "respond", "16072" )' aria-label='Reply to Andy Crestodina (@crestodina)'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-10802">
+				<div id="div-comment-10802" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/1a033db1da2b45702ed364d31619a9b5?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/1a033db1da2b45702ed364d31619a9b5?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">MichaelEdits</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        11/1/16                    </span>
+                                    </div>
+                
+                <p>If you can&#8217;t identify the seven most important things to put on your menu, without drop-downs and with concise yet informative descriptions, you probably haven&#8217;t put enough thought into what your website is about.</p>
+<p>(And my hand&#8217;s up higher than Arnold Horshack on that one. Guilty!)</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10802' onclick='return addComment.moveForm( "div-comment-10802", "10802", "respond", "16072" )' aria-label='Reply to MichaelEdits'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-10803">
+				<div id="div-comment-10803" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/525fa764b67db21176eb4c1afec5bb0e?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/525fa764b67db21176eb4c1afec5bb0e?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">zoyoyayep</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        12/8/16                    </span>
+                                    </div>
+                
+                <p>Hey Andy!<br />
+Thanks for sharing such a great content about designing a site. I&#8217;ve some other problem,can you suggest some seo and design service which you highly recommend or do you offer this services??</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10803' onclick='return addComment.moveForm( "div-comment-10803", "10803", "respond", "16072" )' aria-label='Reply to zoyoyayep'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-11119">
+				<div id="div-comment-11119" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://i1.wp.com/pbs.twimg.com/profile_images/727984545694355456/nZTnXz-V_normal.jpg?resize=70%2C70' srcset='https://secure.gravatar.com/avatar/be80079de16c75114193f3c7d90df5a3?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Andy Crestodina (@crestodina)</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        1/12/17                    </span>
+                                    </div>
+                
+                <p>We offer web design services, but we don&#8217;t do SEO as a separate, service. It&#8217;s really build in to our design process. But there are thousands of SEO companies. If you can, I recommend finding someone local that you can meet with regularly.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11119' onclick='return addComment.moveForm( "div-comment-11119", "11119", "respond", "16072" )' aria-label='Reply to Andy Crestodina (@crestodina)'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10804">
+				<div id="div-comment-10804" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/be3cc3a4289b6a673b6f06dfa7bdcfe9?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/be3cc3a4289b6a673b6f06dfa7bdcfe9?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">kapush</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        12/11/16                    </span>
+                                    </div>
+                
+                <p>I was in such a hurry to edit my site nav that I forgot to thank you for this wonderful post :p</p>
+<p>And to answer your question, I put my email with (at) instead of @ at the top of the sidebar &#8211; no number, though, since I don&#8217;t see my target audience communicating with me across continents!</p>
+<p>Thanks again.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10804' onclick='return addComment.moveForm( "div-comment-10804", "10804", "respond", "16072" )' aria-label='Reply to kapush'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-10935">
+				<div id="div-comment-10935" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/e8b4cca1b80bb7233d18bc7a7e700cbf?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/e8b4cca1b80bb7233d18bc7a7e700cbf?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">mooersrealty</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        12/24/16                    </span>
+                                    </div>
+                
+                <p>Thank you for the pointers. Better designs are like simple gear shift patterns. Working sites that deliver quick, easy, fully. Yeah. Do that.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10935' onclick='return addComment.moveForm( "div-comment-10935", "10935", "respond", "16072" )' aria-label='Reply to mooersrealty'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-11020">
+				<div id="div-comment-11020" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/f308bc21c77022c52756574420dcd326?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/f308bc21c77022c52756574420dcd326?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Leslie Bolin</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        1/5/17                    </span>
+                                    </div>
+                
+                <p>Very useful guide. And #3—Foghorns Leghorns in the dropdown—Ha! You have a knack for making learning humorous and entertaining. Thank you.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11020' onclick='return addComment.moveForm( "div-comment-11020", "11020", "respond", "16072" )' aria-label='Reply to Leslie Bolin'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-11118">
+				<div id="div-comment-11118" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://i1.wp.com/pbs.twimg.com/profile_images/727984545694355456/nZTnXz-V_normal.jpg?resize=70%2C70' srcset='https://secure.gravatar.com/avatar/be80079de16c75114193f3c7d90df5a3?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Andy Crestodina (@crestodina)</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        1/12/17                    </span>
+                                    </div>
+                
+                <p>It&#8217;s fun that you caught that. That was an 80&#8217;s cartoon reference for our Gen X readers!</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11118' onclick='return addComment.moveForm( "div-comment-11118", "11118", "respond", "16072" )' aria-label='Reply to Andy Crestodina (@crestodina)'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-11349">
+				<div id="div-comment-11349" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/57ea10bbb6205de489d9a19354a7fafd?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/57ea10bbb6205de489d9a19354a7fafd?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">S.L. Bradford</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        2/9/17                    </span>
+                                    </div>
+                
+                <p>Really liked the article. One thing on examination: The drop down menu study cited was primarily focusing on drop downs for adding information &#8211; not drop down menus in general. Drop down menus may be annoying but if designed with the other best practices you mention, my bet is that feature will be the least of the issues. Mega-menus are equally annoying when they overwhelm the viewer with too many options.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11349' onclick='return addComment.moveForm( "div-comment-11349", "11349", "respond", "16072" )' aria-label='Reply to S.L. Bradford'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-11605">
+				<div id="div-comment-11605" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/67171892c9723a5271611a89f89a6fea?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/67171892c9723a5271611a89f89a6fea?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Ricardo</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        3/22/17                    </span>
+                                    </div>
+                
+                <p>Very helpful, thank you for this article</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11605' onclick='return addComment.moveForm( "div-comment-11605", "11605", "respond", "16072" )' aria-label='Reply to Ricardo'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-11693">
+				<div id="div-comment-11693" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/ccba8c6b2d9449109a7318e980dd62f8?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/ccba8c6b2d9449109a7318e980dd62f8?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Gloriousdays</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        4/5/17                    </span>
+                                    </div>
+                
+                <p>It&#8217;s time to kill the 7 plus/minus 2 urban myth for menus. It applies when trying to recall the items, not when they&#8217;re visually in front of them as they are in a menu.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11693' onclick='return addComment.moveForm( "div-comment-11693", "11693", "respond", "16072" )' aria-label='Reply to Gloriousdays'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-11845">
+				<div id="div-comment-11845" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/bd86dccc950329de7667eca1f04b5714?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/bd86dccc950329de7667eca1f04b5714?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Kacie Rutherford</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        5/1/17                    </span>
+                                    </div>
+                
+                <p>Hi, what would you suggest instead of &#8220;Services&#8221; in the nav if a company has too many services for each to be a nav item but not enough services to have a mega drop down menu?</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11845' onclick='return addComment.moveForm( "div-comment-11845", "11845", "respond", "16072" )' aria-label='Reply to Kacie Rutherford'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-12117">
+				<div id="div-comment-12117" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/42b03d7a23790d1fc922ec21deb8eedb?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/42b03d7a23790d1fc922ec21deb8eedb?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Doug</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        6/28/17                    </span>
+                                    </div>
+                
+                <p>After reading these tips, please take notice of the menu structure on this very page breaking the rules defined in the article.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12117' onclick='return addComment.moveForm( "div-comment-12117", "12117", "respond", "16072" )' aria-label='Reply to Doug'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-12149">
+				<div id="div-comment-12149" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/234da361c94635ea91b4b55fee909aaa?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/234da361c94635ea91b4b55fee909aaa?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Aaron Boatin</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        7/8/17                    </span>
+                                    </div>
+                
+                <p>Andy, this is another article that is extremely helpful. Thanks!</p>
+<p>However, it appears from the comments that this originally appeared 5 years ago. A lifetime in internet years. What has changed as far as best practices for 2017?</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12149' onclick='return addComment.moveForm( "div-comment-12149", "12149", "respond", "16072" )' aria-label='Reply to Aaron Boatin'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-14109">
+				<div id="div-comment-14109" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/12a8aa25359b615893cc180e120bbf58?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/12a8aa25359b615893cc180e120bbf58?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">accidental goddess</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        8/3/18                    </span>
+                                    </div>
+                
+                <p>A client has a production co. with two events on their site, and each event has its own off-site ticket page.  They want to include a &#8220;TICKETS&#8221; link in the top main menu with a drop-down that has the links to each of the off-site pages.  My rule is to never link off your site in the main menu.  Your thoughts?</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14109' onclick='return addComment.moveForm( "div-comment-14109", "14109", "respond", "16072" )' aria-label='Reply to accidental goddess'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-14761">
+				<div id="div-comment-14761" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/e294c2782257dcffccb9ca74442feb12?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/e294c2782257dcffccb9ca74442feb12?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">éclat.digital</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        11/27/18                    </span>
+                                    </div>
+                
+                <p>Great read and solid advice throughout.  </p>
+<p>Question: When it comes to listing Products in a mega dropdown, do you have any thoughts on listing product offerings by Manufacturer as well as Use Case (eg. Residential/Office/Commercial)?  Any SEO pitfalls or caveats to this organizational approach?</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14761' onclick='return addComment.moveForm( "div-comment-14761", "14761", "respond", "16072" )' aria-label='Reply to éclat.digital'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-15249">
+				<div id="div-comment-15249" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/0eb4e889bf84aa1e98a2ac725c5c638a?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/0eb4e889bf84aa1e98a2ac725c5c638a?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Speaker Tim White</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        2/23/19                    </span>
+                                    </div>
+                
+                <p>Great Post here Sir.  Thank you!</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15249' onclick='return addComment.moveForm( "div-comment-15249", "15249", "respond", "16072" )' aria-label='Reply to Speaker Tim White'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-15860">
+				<div id="div-comment-15860" class="comment-body">
+			<div class="comment-wrap">
+
+            <div class="comment-left-column">
+                <img alt='' src='https://secure.gravatar.com/avatar/49c55ecdeb15dbc8db2e008f537694bb?s=70&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g' srcset='https://secure.gravatar.com/avatar/49c55ecdeb15dbc8db2e008f537694bb?s=140&#038;d=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&#038;r=g 2x' class='avatar avatar-70 photo' height='70' width='70' />            </div><!-- .comment-left-column -->
+
+            <div class="comment-right-column">
+
+                <div class="comment-meta commentmetadata">
+                    <span class="comment-author-name">
+                        <span><cite class="fn">Epy</cite></span> on
+                    </span>
+                    <span class="comment-date">
+                        4/25/19                    </span>
+                                    </div>
+                
+                <p>I thought this was a fantastic post. Thanks so much for sharing this with the world.</p>
+
+                <div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15860' onclick='return addComment.moveForm( "div-comment-15860", "15860", "respond", "16072" )' aria-label='Reply to Epy'>Reply</a></div>
+            </div> <!-- .comment-right-column -->
+		</div> <!-- .comment-wrap -->
+
+                </div>
+                
+		</li><!-- #comment-## -->
+        </ul><!--.comment-list -->
+    
+</div><!-- #comments -->
+                        
+                    </div> <!-- .l-blog-right -->
+                </div> <!-- .row -->
+            </div> <!-- .template__content -->
+        </div> <!--  .row -->
+    </div> <!-- .container -->
+</div><!-- .template -->
+
+<div class="StickyFooter">
+    <div class="StickyFooter-progressBar progressBarDesktop"><div class="StickyFooter-progress">&nbsp;</div></div>
+    <div class="container-fluid / StickyFooter-container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-7 / StickyFooter-message">
+                Join over 16,000 people who receive bi-weekly web marketing tips.                <div class="privacy-policy-gdpr"><p>By signing up you are agreeing to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+</div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5 / StickyFooter-newsletter">
+                <!-- widget --><div id="gform_widget-3" class="widget gform_widget">
+                <div class='gf_browser_chrome gform_wrapper newsletter-sticky-form_wrapper' id='gform_wrapper_4' ><form method='post' enctype='multipart/form-data'  id='gform_4' class='newsletter-sticky-form' action='/blog/website-navigation/'>
+                        <div class='gform_body'><ul id='gform_fields_4' class='gform_fields top_label form_sublabel_below description_below'><li id='field_4_1'  class='gfield field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_4_1' >Email</label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_4_1' type='text' value='' class='medium' tabindex='1000'  placeholder='Email Address'  aria-invalid="false"/>
+                        </div></li>
+                            </ul></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_4' class='gform_button button' value='Sign me up' tabindex='1001' onclick='if(window["gf_submitting_4"]){return false;}  window["gf_submitting_4"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_4"]){return false;} window["gf_submitting_4"]=true;  jQuery("#gform_4").trigger("submit",[true]); }' /> 
+            <input type='hidden' class='gform_hidden' name='is_submit_4' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='4' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_4' value='WyJbXSIsIjE3ZGQzMzI2YWM5ZWU4MTk2MWVlZjcwNTRkN2Q5NDhmIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_4' id='gform_target_page_number_4' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_4' id='gform_source_page_number_4' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div><script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 4) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [4, 1]) } ); </script></div><!-- /widget -->            </div>
+        </div>
+    </div>
+    <div class="container-fluid / StickyFooter-container-mobile">
+        <div class="row">
+            <div class="col-xs-10 StickyFooter-mobileAddthis">
+                <div class="AddThis">
+                    <span class="AddThis-title">Share This</span>
+                    
+			<div class="addthis_toolbox addthis_32x32_style" addthis:url="https://www.orbitmedia.com/blog/website-navigation/" addthis:title="Website Navigation: 7 Best Practices, Design Tips and Warnings">
+					<div class="custom_images">
+							<a class="addthis_button_facebook"><i class="fa fa-facebook facebook"></i></a>
+							<a class="addthis_button_twitter"><i class="fa fa-twitter twitter"></i></a>
+							<a class="addthis_button_linkedin"><i class="fa  fa-linkedin linkedin"></i></a>
+							<a class="addthis_button_buffer"><i class="fa icon-buffer"></i></a>
+							<a class="addthis_button_compact"><i class="fa fa-plus plus"></i></a>
+							<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+			</div>
+	
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-586d59faee98661" async="async"></script>
+					<script type="text/javascript">
+							// Get or create the AddThis config object.
+							var addthis_config = addthis_config || {};
+
+							// Disable "Click Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_clickback = false;
+
+							// Disable "Address Bar Tracking" codes.
+							// @see http://www.addthis.com/academy/removing-hashtags-anchors-and-tracking-codes-from-your-urls/
+							addthis_config.data_track_addressbar = false;
+
+							// Get or create the AddThis share object.
+							var addthis_share = addthis_share || {}
+
+							// Append "via orbiteers" to Tweets.
+							// @see http://support.addthis.com/customer/portal/articles/1013558-removing-all-hashtags-anchors-weird-codes-from-your-urls
+							addthis_share = {
+									passthrough : {
+											twitter: {
+													via: "orbiteers"
+											}
+									}
+							}
+					</script>
+			                </div><!-- shareWrapper -->
+            </div>
+            <div class="col-xs-2 StickyFooter-mobileNewsletter">
+                <a href="#newsletter-wa"><i class="fa fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="StickyFooter-progressBar progressBarMobile"><div class="StickyFooter-progress">&nbsp;</div></div>
+</div> <!-- /.StickyFooter -->
+                                                                                   
+
+<!-- Page Blocks
+================================================== -->
+
+</div>
+
+<footer class="footer">
+
+    
+    <div class="backToTop footer__jumpTop"><a href="#"><i class="fa fa-chevron-up"></i></a></div>
+
+    <div class="footer__main">
+        <div class="container">
+            <div class="footer__location">
+                <div class="contactMenu"><ul id="menu-contact-menu" class="menu"><li id="menu-item-7704" class="no-link menu-item menu-item-type-custom menu-item-object-custom menu-item-7704"><a>4043 n ravenswood ave, suite 316, chicago, il 60613</a></li>
+<li id="menu-item-7705" class="no-link menu-item menu-item-type-custom menu-item-object-custom menu-item-7705"><a href="tel:+1-773-348-4581">773.348.4581</a></li>
+<li id="menu-item-7706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7706"><a href="https://www.orbitmedia.com/contact/">Contact</a></li>
+</ul></div>            </div>
+            <div class="row footer__mainRow">
+                <div class="footer__mainCol footer__mainCol--left">
+                    <p><a class="button" href="https://www.orbitmedia.com/contact/">Start A Project</a></p>
+<p><a class="btn btn-secondary" href="/portfolio/">see our Work</a></p>
+                </div>
+                <div class="footer__mainCol footer__mainCol--center">
+                    <div class="footer__bcorp">
+                        <p>Orbit is a proud member of the Chicago community. We strive to educate and collaborate with like-minded businesses to make a difference environmentally and socially. Let&#8217;s collaborate.</p>
+<p><a href="https://www.orbitmedia.com/about/b-corp/">Learn about our BCorp values</a></p>
+                    </div>
+                </div>
+                <div class="footer__mainCol footer__mainCol--right">
+                                            <div id="newsletter-wa">
+                            <h5 class="newsletter__title">Join over 16,000 people who receive bi-weekly web marketing tips.</h5>                            <!-- widget --><div id="gform_widget-2" class="widget gform_widget">
+                <div class='gf_browser_chrome gform_wrapper newsletter-signup-form_wrapper' id='gform_wrapper_2' ><form method='post' enctype='multipart/form-data'  id='gform_2' class='newsletter-signup-form' action='/blog/website-navigation/'>
+                        <div class='gform_body'><ul id='gform_fields_2' class='gform_fields top_label form_sublabel_below description_below'><li id='field_2_1'  class='gfield field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_2_1' >Email</label><div class='ginput_container ginput_container_email'>
+                            <input name='input_1' id='input_2_1' type='text' value='' class='medium' tabindex='1002'  placeholder='Email Address'  aria-invalid="false"/>
+                        </div></li>
+                            </ul></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_2' class='gform_button button' value='Sign me up' tabindex='1003' onclick='if(window["gf_submitting_2"]){return false;}  window["gf_submitting_2"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_2"]){return false;} window["gf_submitting_2"]=true;  jQuery("#gform_2").trigger("submit",[true]); }' /> 
+            <input type='hidden' class='gform_hidden' name='is_submit_2' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='2' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_2' value='WyJbXSIsIjE3ZGQzMzI2YWM5ZWU4MTk2MWVlZjcwNTRkN2Q5NDhmIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_2' id='gform_target_page_number_2' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_2' id='gform_source_page_number_2' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div><script type='text/javascript'> jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 2) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [2, 1]) } ); </script></div><!-- /widget -->                            <div class="privacy-policy-gdpr"><p>By signing up you are agreeing to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+</div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer__bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="footer__bottomCol footer__bottomCol--center">
+                                            <div class="socialMedia">
+                            <ul class="socialMedia__list">
+                                                                    <li class="socialMedia__item"><a href="https://www.facebook.com/orbitmediastudios" target="_blank"><span aria-hidden="true"><i class="fa fa-facebook" aria-hidden="true"></i></span><span class="sr-only">Facebook</span></a></li>
+                                                                    <li class="socialMedia__item"><a href="http://twitter.com/orbiteers" target="_blank"><span aria-hidden="true"><i class="fa fa-twitter" aria-hidden="true"></i></span><span class="sr-only">Twitter</span></a></li>
+                                                                    <li class="socialMedia__item"><a href="http://www.linkedin.com/company/orbit-media-studios-inc." target="_blank"><span aria-hidden="true"><i class="fa fa-linkedin" aria-hidden="true"></i></span><span class="sr-only">LinkedIn</span></a></li>
+                                                                    <li class="socialMedia__item"><a href="https://www.youtube.com/Orbitmedia" target="_blank"><span aria-hidden="true"><i class="fa fa-youtube" aria-hidden="true"></i></span><span class="sr-only">Youtube</span></a></li>
+                                                            </ul>
+                        </div>
+                                    </div>
+
+                <div class="footer__bottomCol footer__bottomCol--left copyright"><span>&copy; 2019 Orbit Media Studios</span></div>
+
+                <div class="footer__bottomCol footer__bottomCol--right footer__bottomCol--menu"><ul id="menu-copyright" class="menu"><li id="menu-item-8722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8722"><a href="https://www.orbitmedia.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-7693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7693"><a href="https://www.orbitmedia.com/sitemap/">Sitemap</a></li>
+<li id="menu-item-8796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8796"><a href="https://www.orbitmedia.com/contact/support/">Support</a></li>
+</ul></div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</div><!-- /.container -->
+
+<!-- JavaScript Bootstrap Breakpoint Detection -->
+<div class="device-xs visible-xs"></div>
+<div class="device-sm visible-sm"></div>
+<div class="device-md visible-md"></div>
+<div class="device-lg visible-lg"></div>
+<!-- JavaScript Bootstrap Breakpoint Detection -->
+
+
+<script type='text/javascript'>
+	//<![CDATA[
+    jQuery(document).ready(function($) { 
+    	$('html').MagicLiquidizerTable({ whichelement: 'table', breakpoint: '780', headerSelector: 'thead td, thead th, tr th', bodyRowSelector: 'tbody tr, tr', table: '1' })
+    })
+	//]]>
+</script> 	
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/click-to-tweet/js/ctt-script.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201918'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/oms-gdpr/oms-gdpr.js?ver=4.9.8'></script>
+<script type='text/javascript' src='//maps.googleapis.com/maps/api/js?key=AIzaSyCjavvIh5AutMKWMhB17E0cxVkyNMgv5Ds&#038;ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/orbitmedia-events/assets/omsevents-map.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var AIOSRS_Frontend = {"ajaxurl":"https:\/\/www.orbitmedia.com\/wp-admin\/admin-ajax.php","post_id":"16072","user_rating_nonce":"35e1bea903","success_msg":"Thanks!"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/wp-schema-pro/admin/assets/js/frontend.js?ver=1.1.10'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/jquery.nova.js?ver=1'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/custom.js?ver=1'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/orbitmedia-projects/assets/js/orbitmedia-projects.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/orbitmedia-services/assets/js/orbitmedia-services.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var spuvar = {"is_admin":"","disable_style":"","ajax_mode":"","ajax_url":"https:\/\/www.orbitmedia.com\/wp-admin\/admin-ajax.php","ajax_mode_url":"https:\/\/www.orbitmedia.com\/?spu_action=spu_load&lang=","pid":"16072","is_front_page":"","is_category":"","site_url":"https:\/\/www.orbitmedia.com","is_archive":"","is_search":"","is_preview":"","seconds_confirmation_close":"5"};
+var spuvar_social = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/popups/public/assets/js/public.js?ver=1.9.3.2'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/themes/orbit-media/js/jquery.mobile.custom.min.js?ver=1'></script>
+<script type='text/javascript' src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js?ver=1'></script>
+<script type='text/javascript' src='//cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js?ver=1'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script async="async" type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/akismet/_inc/form.js?ver=4.0.8'></script>
+<script type='text/javascript' src='https://www.orbitmedia.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.4.5'></script>
+
+		<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=121310987&postid=16072&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&greeting=What+are+your+thoughts%3F&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=dark&lang=en_US&jetpack_version=6.6.1&show_cookie_consent=10&has_cookie_consent=0&sig=bc99942868f1987b8f19328e73fa43545e13a476#parent=https%3A%2F%2Fwww.orbitmedia.com%2Fblog%2Fwebsite-navigation%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=121310987&postid=16072&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=https%3A%2F%2Fwww.orbitmedia.com%2Fwp-content%2Fthemes%2Forbit-media%2Fimages%2Fno-image-speaker.jpg&greeting=What+are+your+thoughts%3F&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=dark&lang=en_US&jetpack_version=6.6.1&show_cookie_consent=10&has_cookie_consent=0&sig=bc99942868f1987b8f19328e73fa43545e13a476#parent=https%3A%2F%2Fwww.orbitmedia.com%2Fblog%2Fwebsite-navigation%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "https:\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https://' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https://' ) !== origin ) {
+									return;
+								}
+								jQuery( frame ).height( event.data );
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+
+		<script type='text/javascript' src='https://stats.wp.com/e-201918.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.6.1',blog:'121310987',post:'16072',tz:'-5',srv:'www.orbitmedia.com'} ]);
+	_stq.push([ 'clickTrackerInit', '121310987', '16072' ]);
+</script>
+
+<script>
+    jQuery(document).ready(function($) {
+      $('.dropdown-toggle').on("click", function() {
+        $(this).parents('li').toggleClass('open');
+      });
+    });
+</script>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "image": "https://www.orbitmedia.com/wp-content/themes/orbit-media/images/logo-text.png",
+    "priceRange": "$$",
+    "telephone": "773-348-4581",
+    "name": "Orbit Media Studios",
+    "logo": "https://www.orbitmedia.com/wp-content/themes/orbit-media/images/logo-text.png",
+    "description": "Chicago web design & development team focused on results.",
+    "openingHours": [
+        "Monday - Friday: 9:00am - 5pm",
+        "Saturday: Closed",
+        "Sunday: Closed"
+    ],
+    "geo": {
+        "@type": "GeoCoordinates",
+        "longitude": "-87.673527",
+        "latitude": "41.95579"
+    },
+    "url": "https://www.orbitmedia.com",
+    "sameAs": [
+        "https://www.facebook.com/orbitmediastudios",
+        "https://twitter.com/orbiteers",
+        "https://www.linkedin.com/company/orbit-media-studios-inc."
+    ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-773-348-4581",
+        "contactType": "Customer Service",
+        "email": "",
+        "contactOption": "",
+        "areaServed": "",
+        "availableLanguage": null
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "United States",
+        "addressLocality": "Chicago",
+        "addressRegion": "IL",
+        "postalCode": "60613",
+        "streetAddress": "4043 N Ravenswood Ave, Suite 316"
+    }
+}</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* font-family: 'Mandali', sans-serif; */
+
+@media screen and (min-width: 992px)
+{
+  .back-image
+  {
+    background-position: center;
+    background-size: cover;
+    height: 30vh;
+    border-radius: 0; 
+  }
+}
+@media screen and (min-width: 1200px)
+{
+  .back-image
+  {
+      background-position: center;
+      background-size: cover;
+      height: 80vh;
+      border-radius: 0; 
+  }
+}
+
+/*  change brand font*/
+.navbar-brand
+  {
+      font-family: 'Mandali', sans-serif;
+      font-size: 2rem;
+      font-weight:bold;
+  }
+
+/* make header image responsive*/
+
+
+.image-content
+{
+  border-radius: 5px;
+}
+
+.shadow-lg
+{
+  height: 340px;
+}
